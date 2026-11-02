@@ -1,0 +1,334 @@
+{
+  "orders": {
+    "filename": "olist_orders_dataset.csv",
+    "row_count": 99441,
+    "columns": [
+      {
+        "column": "order_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "customer_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "order_status",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "order_purchase_timestamp",
+        "type": "TIMESTAMP"
+      },
+      {
+        "column": "order_approved_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "column": "order_delivered_carrier_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "column": "order_delivered_customer_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "column": "order_estimated_delivery_date",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "null_counts": {
+      "order_id": 0,
+      "customer_id": 0,
+      "order_status": 0,
+      "order_purchase_timestamp": 0,
+      "order_approved_at": 160,
+      "order_delivered_carrier_date": 1783,
+      "order_delivered_customer_date": 2965,
+      "order_estimated_delivery_date": 0
+    }
+  },
+  "order_items": {
+    "filename": "olist_order_items_dataset.csv",
+    "row_count": 112650,
+    "columns": [
+      {
+        "column": "order_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "order_item_id",
+        "type": "BIGINT"
+      },
+      {
+        "column": "product_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "seller_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "shipping_limit_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "column": "price",
+        "type": "DOUBLE"
+      },
+      {
+        "column": "freight_value",
+        "type": "DOUBLE"
+      }
+    ],
+    "null_counts": {
+      "order_id": 0,
+      "order_item_id": 0,
+      "product_id": 0,
+      "seller_id": 0,
+      "shipping_limit_date": 0,
+      "price": 0,
+      "freight_value": 0
+    }
+  },
+  "order_payments": {
+    "filename": "olist_order_payments_dataset.csv",
+    "row_count": 103886,
+    "columns": [
+      {
+        "column": "order_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "payment_sequential",
+        "type": "BIGINT"
+      },
+      {
+        "column": "payment_type",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "payment_installments",
+        "type": "BIGINT"
+      },
+      {
+        "column": "payment_value",
+        "type": "DOUBLE"
+      }
+    ],
+    "null_counts": {
+      "order_id": 0,
+      "payment_sequential": 0,
+      "payment_type": 0,
+      "payment_installments": 0,
+      "payment_value": 0
+    }
+  },
+  "order_reviews": {
+    "filename": "olist_order_reviews_dataset.csv",
+    "row_count": 99224,
+    "columns": [
+      {
+        "column": "review_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "order_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "review_score",
+        "type": "BIGINT"
+      },
+      {
+        "column": "review_comment_title",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "review_comment_message",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "review_creation_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "column": "review_answer_timestamp",
+        "type": "TIMESTAMP"
+      }
+    ],
+    "null_counts": {
+      "review_id": 0,
+      "order_id": 0,
+      "review_score": 0,
+      "review_comment_title": 87656,
+      "review_comment_message": 58247,
+      "review_creation_date": 0,
+      "review_answer_timestamp": 0
+    }
+  },
+  "customers": {
+    "filename": "olist_customers_dataset.csv",
+    "row_count": 99441,
+    "columns": [
+      {
+        "column": "customer_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "customer_unique_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "customer_zip_code_prefix",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "customer_city",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "customer_state",
+        "type": "VARCHAR"
+      }
+    ],
+    "null_counts": {
+      "customer_id": 0,
+      "customer_unique_id": 0,
+      "customer_zip_code_prefix": 0,
+      "customer_city": 0,
+      "customer_state": 0
+    }
+  },
+  "sellers": {
+    "filename": "olist_sellers_dataset.csv",
+    "row_count": 3095,
+    "columns": [
+      {
+        "column": "seller_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "seller_zip_code_prefix",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "seller_city",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "seller_state",
+        "type": "VARCHAR"
+      }
+    ],
+    "null_counts": {
+      "seller_id": 0,
+      "seller_zip_code_prefix": 0,
+      "seller_city": 0,
+      "seller_state": 0
+    }
+  },
+  "products": {
+    "filename": "olist_products_dataset.csv",
+    "row_count": 32951,
+    "columns": [
+      {
+        "column": "product_id",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "product_category_name",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "product_name_lenght",
+        "type": "BIGINT"
+      },
+      {
+        "column": "product_description_lenght",
+        "type": "BIGINT"
+      },
+      {
+        "column": "product_photos_qty",
+        "type": "BIGINT"
+      },
+      {
+        "column": "product_weight_g",
+        "type": "BIGINT"
+      },
+      {
+        "column": "product_length_cm",
+        "type": "BIGINT"
+      },
+      {
+        "column": "product_height_cm",
+        "type": "BIGINT"
+      },
+      {
+        "column": "product_width_cm",
+        "type": "BIGINT"
+      }
+    ],
+    "null_counts": {
+      "product_id": 0,
+      "product_category_name": 610,
+      "product_name_lenght": 610,
+      "product_description_lenght": 610,
+      "product_photos_qty": 610,
+      "product_weight_g": 2,
+      "product_length_cm": 2,
+      "product_height_cm": 2,
+      "product_width_cm": 2
+    }
+  },
+  "geolocation": {
+    "filename": "olist_geolocation_dataset.csv",
+    "row_count": 1000163,
+    "columns": [
+      {
+        "column": "geolocation_zip_code_prefix",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "geolocation_lat",
+        "type": "DOUBLE"
+      },
+      {
+        "column": "geolocation_lng",
+        "type": "DOUBLE"
+      },
+      {
+        "column": "geolocation_city",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "geolocation_state",
+        "type": "VARCHAR"
+      }
+    ],
+    "null_counts": {
+      "geolocation_zip_code_prefix": 0,
+      "geolocation_lat": 0,
+      "geolocation_lng": 0,
+      "geolocation_city": 0,
+      "geolocation_state": 0
+    }
+  },
+  "category_translation": {
+    "filename": "product_category_name_translation.csv",
+    "row_count": 71,
+    "columns": [
+      {
+        "column": "product_category_name",
+        "type": "VARCHAR"
+      },
+      {
+        "column": "product_category_name_english",
+        "type": "VARCHAR"
+      }
+    ],
+    "null_counts": {
+      "product_category_name": 0,
+      "product_category_name_english": 0
+    }
+  }
+}
