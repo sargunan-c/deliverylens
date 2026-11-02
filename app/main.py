@@ -74,6 +74,7 @@ REQUIRED_RAW_CSVS = [
     "olist_order_reviews_dataset.csv",
     "olist_sellers_dataset.csv",
     "olist_products_dataset.csv",
+    "olist_geolocation_dataset.csv",
     "product_category_name_translation.csv"
 ]
 

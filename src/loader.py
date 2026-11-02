@@ -137,6 +137,19 @@ def run_ingestion():
     """)
     print("Created raw_category_translation")
 
+    # 9. Geolocation
+    con.execute(f"""
+        CREATE TABLE raw_geolocation AS 
+        SELECT 
+            geolocation_zip_code_prefix::VARCHAR AS geolocation_zip_code_prefix,
+            geolocation_lat::DOUBLE AS geolocation_lat,
+            geolocation_lng::DOUBLE AS geolocation_lng,
+            geolocation_city::VARCHAR AS geolocation_city,
+            UPPER(geolocation_state)::VARCHAR AS geolocation_state
+        FROM read_csv_auto('{RAW_DIR}/olist_geolocation_dataset.csv');
+    """)
+    print("Created raw_geolocation")
+
     print("\n--- 2. Building Analytics Mart: Deduplicated Reviews & Order Items Aggregations ---")
     
     # Deduplicate reviews to 1 review per order_id (taking the most recent answer timestamp)
