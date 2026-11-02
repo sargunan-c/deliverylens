@@ -47,7 +47,7 @@ def render_drilldown_view(filters: dict):
             "total_freight_value": "R$ {:.2f}",
             "review_score": "{:.0f} ★"
         }),
-        use_container_width=True,
+        width="stretch",
         height=550,
         hide_index=True
     )

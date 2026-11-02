@@ -21,7 +21,7 @@ def render_sellers_view(filters: dict):
         st.info("No sellers meet the minimum order threshold for the selected filters.")
         return
 
-    st.plotly_chart(plot_seller_handoff_vs_delivery_late(df_sellers), use_container_width=True)
+    st.plotly_chart(plot_seller_handoff_vs_delivery_late(df_sellers), width="stretch")
     
     st.markdown("---")
     
@@ -40,7 +40,7 @@ def render_sellers_view(filters: dict):
                 "late_handoff_rate_pct": "{:.1f}%",
                 "avg_review_score": "{:.2f} ★"
             }),
-            use_container_width=True,
+            width="stretch",
             hide_index=True
         )
         
@@ -57,7 +57,7 @@ def render_sellers_view(filters: dict):
                 "late_handoff_rate_pct": "{:.1f}%",
                 "avg_review_score": "{:.2f} ★"
             }),
-            use_container_width=True,
+            width="stretch",
             hide_index=True
         )
 

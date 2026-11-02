@@ -18,7 +18,7 @@ def render_cx_reviews_view(filters: dict):
         st.warning("No review records found matching current filters.")
         return
 
-    st.plotly_chart(plot_delay_cliff_vs_review(df_cliff), use_container_width=True)
+    st.plotly_chart(plot_delay_cliff_vs_review(df_cliff), width="stretch")
     
     # Statistical table
     st.markdown("##### 📊 Delivery Performance vs Review Sentiment Table")
@@ -29,7 +29,7 @@ def render_cx_reviews_view(filters: dict):
             "pct_1_star_reviews": "{:.1f}%",
             "pct_5_star_reviews": "{:.1f}%"
         }),
-        use_container_width=True,
+        width="stretch",
         hide_index=True
     )
 

@@ -27,7 +27,7 @@ def render_executive_view(filters: dict):
     with col_main:
         trends_df = get_monthly_trends(filters)
         if not trends_df.empty:
-            st.plotly_chart(plot_monthly_volume_and_late_rate(trends_df), use_container_width=True)
+            st.plotly_chart(plot_monthly_volume_and_late_rate(trends_df), width="stretch")
         else:
             st.info("No trend data available for current filter selection.")
             
@@ -35,7 +35,7 @@ def render_executive_view(filters: dict):
         delivered_count = int(kpis["delivered_orders"])
         late_count = int(kpis["late_orders"])
         if delivered_count > 0:
-            st.plotly_chart(plot_ontime_vs_late_donut(delivered_count, late_count), use_container_width=True)
+            st.plotly_chart(plot_ontime_vs_late_donut(delivered_count, late_count), width="stretch")
             
             # Quick summary badge
             st.markdown(f"""

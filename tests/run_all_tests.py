@@ -15,12 +15,14 @@ from tests.test_queries import (
     test_executive_kpis_consistency
 )
 from tests.test_views import test_metrics_and_charts
+from tests.test_date_robustness import test_date_robustness
 
 tests = [
     ("test_delivered_orders_balance", test_delivered_orders_balance),
     ("test_no_double_counting_in_fact_orders", test_no_double_counting_in_fact_orders),
     ("test_late_delivery_definition", test_late_delivery_definition),
     ("test_executive_kpis_consistency", test_executive_kpis_consistency),
+    ("test_date_robustness", test_date_robustness),
     ("test_metrics_and_charts", test_metrics_and_charts)
 ]
 

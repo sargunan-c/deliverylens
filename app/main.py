@@ -99,13 +99,34 @@ date_range = run_query("SELECT MIN(purchase_date) as min_d, MAX(purchase_date) a
 min_date = date_range["min_d"]
 max_date = date_range["max_d"]
 
-start_date, end_date = st.sidebar.date_input(
+date_selection = st.sidebar.date_input(
     "Order Purchase Date Range",
     value=(datetime.date(2017, 1, 1), datetime.date(2018, 8, 31)),
     min_value=min_date,
     max_value=max_date,
     help="Filter transactions by purchase date."
 )
+
+# Robust date range parsing (handles single clicks, partial ranges, and cleared inputs)
+if isinstance(date_selection, (tuple, list)):
+    if len(date_selection) == 2:
+        start_date, end_date = date_selection
+    elif len(date_selection) == 1:
+        start_date = date_selection[0]
+        end_date = date_selection[0]
+    else:
+        start_date = min_date
+        end_date = max_date
+elif isinstance(date_selection, datetime.date):
+    start_date = date_selection
+    end_date = date_selection
+else:
+    start_date = min_date
+    end_date = max_date
+
+# Ensure chronological ordering if user selects in reverse
+if start_date and end_date and start_date > end_date:
+    start_date, end_date = end_date, start_date
 
 # Macro Region Filter
 macro_regions = ["All", "Southeast", "South", "Northeast", "Central-West", "North"]

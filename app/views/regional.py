@@ -43,7 +43,7 @@ def render_regional_view(filters: dict):
             "avg_freight_cost": "R$ {:.2f}",
             "avg_review_score": "{:.2f} ★"
         }),
-        use_container_width=True,
+        width="stretch",
         hide_index=True
     )
     
@@ -51,7 +51,7 @@ def render_regional_view(filters: dict):
     
     col1, col2 = st.columns([1, 1])
     with col1:
-        st.plotly_chart(plot_regional_late_rates(df_regional), use_container_width=True)
+        st.plotly_chart(plot_regional_late_rates(df_regional), width="stretch")
         
     with col2:
         st.markdown("##### 🔍 State-Level Breakdown & Friction Ranking")
@@ -66,7 +66,7 @@ def render_regional_view(filters: dict):
                 "avg_freight_cost": "R$ {:.2f}",
                 "avg_review_score": "{:.2f} ★"
             }),
-            use_container_width=True,
+            width="stretch",
             height=580,
             hide_index=True
         )

@@ -30,7 +30,7 @@ def render_cancellations_view(filters: dict):
                 "canceled_before_dispatch": "{:,}",
                 "avg_canceled_order_value": "R$ {:.2f}"
             }),
-            use_container_width=True,
+            width="stretch",
             hide_index=True
         )
         
