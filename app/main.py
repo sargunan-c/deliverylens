@@ -62,34 +62,49 @@ st.markdown("""
 st.title("📦 DeliveryLens")
 st.markdown("**E-commerce Logistics Operations & Customer Experience Analytics**")
 
-# Clean Deployment Environment Preflight Check
+# Clean Deployment Environment Preflight & Auto-Ingestion
 DB_FILE = os.path.join(ROOT_DIR, "data", "processed", "deliverylens.duckdb")
 RAW_DATA_DIR = os.path.join(ROOT_DIR, "data", "raw")
 
-if not os.path.exists(DB_FILE):
-    core_csv = os.path.join(RAW_DATA_DIR, "olist_orders_dataset.csv")
-    if os.path.exists(core_csv):
-        with st.spinner("⏳ Initializing DuckDB analytical database from raw CSVs (first-time deployment run)..."):
-            from src.loader import run_ingestion
-            run_ingestion()
-        st.success("Database initialized successfully!")
-        st.rerun()
-    else:
-        st.error("⚠️ **Dataset Not Found in Deployment Environment**")
-        st.info("""
-        DeliveryLens requires the Brazilian Olist E-commerce dataset to be ingested into DuckDB.
+REQUIRED_RAW_CSVS = [
+    "olist_orders_dataset.csv",
+    "olist_customers_dataset.csv",
+    "olist_order_items_dataset.csv",
+    "olist_order_payments_dataset.csv",
+    "olist_order_reviews_dataset.csv",
+    "olist_sellers_dataset.csv",
+    "olist_products_dataset.csv",
+    "product_category_name_translation.csv"
+]
+
+@st.cache_resource(show_spinner="⏳ Building analytical DuckDB marts from raw Olist dataset (one-time setup)...")
+def ensure_database_ready():
+    """Initializes DuckDB database if missing. Cached across sessions to avoid re-ingestion."""
+    if os.path.exists(DB_FILE) and os.path.getsize(DB_FILE) > 0:
+        return True
         
-        **How to Initialize the Platform:**
-        1. Download the public Olist dataset from Kaggle:
-           👉 [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
-        2. Extract and place the CSV files inside `data/raw/`
-        3. Run the automated ingestion pipeline:
-           ```bash
-           python src/loader.py
-           ```
-        4. Reload this application once the analytical database `data/processed/deliverylens.duckdb` is created.
-        """)
-        st.stop()
+    missing_files = [f for f in REQUIRED_RAW_CSVS if not os.path.exists(os.path.join(RAW_DATA_DIR, f))]
+    if missing_files:
+        return missing_files
+        
+    from src.loader import run_ingestion
+    run_ingestion()
+    return True
+
+db_status = ensure_database_ready()
+
+if db_status is not True:
+    st.error("⚠️ **Dataset Missing in Deployment Environment**")
+    st.markdown(f"The following required dataset files are missing from `data/raw/`:")
+    for mf in db_status:
+        st.markdown(f"- `{mf}`")
+    st.info("""
+    **To resolve this:**
+    1. Ensure the dataset CSVs are placed inside the repository's `data/raw/` directory.
+    2. Download source: [Brazilian E-Commerce Public Dataset by Olist on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+    3. Re-deploy or restart the application.
+    """)
+    st.stop()
 
 # Sidebar Filters
 st.sidebar.title("🎛️ Operational Filters")

@@ -20,9 +20,10 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Data (Raw datasets should not be committed to Git due to size; documented download steps provided)
-data/raw/*.csv
+# Data (Raw Olist CSVs are tracked so Streamlit Cloud can auto-build DuckDB on startup)
+# Generated analytical databases and binary files are strictly excluded from git
 data/processed/*.duckdb
+data/processed/*.duckdb.wal
 data/processed/*.parquet
 
 # Temporary exports and caches
