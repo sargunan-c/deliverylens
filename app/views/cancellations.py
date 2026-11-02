@@ -51,3 +51,4 @@ def render_cancellations_view(filters: dict):
         Over 85% of order cancellations happen **before** the item is handed over to the carrier.
         This points toward merchant fulfillment lag, stockouts, or inventory misalignment rather than courier transit failures.
         """)
+

@@ -15,3 +15,4 @@ FROM fact_orders
 WHERE purchase_year_month >= '2017-01' AND purchase_year_month <= '2018-08'
 GROUP BY purchase_year_month
 ORDER BY purchase_year_month ASC;
+

@@ -60,3 +60,4 @@ def render_sellers_view(filters: dict):
             use_container_width=True,
             hide_index=True
         )
+

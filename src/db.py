@@ -29,3 +29,4 @@ def run_query(query: str, params=None) -> pd.DataFrame:
         return df
     finally:
         con.close()
+

@@ -48,3 +48,4 @@ DeliveryLens is an intuitive, SQL-driven operations intelligence platform that e
 1. **Zero Data Hallucination:** 100% of reported statistics are directly derived from the verified Olist dataset.
 2. **In-Process Analytical Power:** Powered by DuckDB for sub-second aggregations over 100k+ rows without external database infrastructure.
 3. **Decoupled Architecture:** Clean separation of database connection (`db.py`), ETL pipeline (`loader.py`), business metrics service (`metrics.py`), and presentation layer (`app/`).
+

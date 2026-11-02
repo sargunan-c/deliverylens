@@ -139,3 +139,4 @@ with tabs[4]:
 
 with tabs[5]:
     render_drilldown_view(active_filters)
+

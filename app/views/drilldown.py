@@ -51,3 +51,4 @@ def render_drilldown_view(filters: dict):
         height=550,
         hide_index=True
     )
+

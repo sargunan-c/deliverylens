@@ -76,3 +76,4 @@ This document synthesizes empirical discoveries from the analysis of 99,441 veri
 ### Recommendation 4: Regional Hub Fulfillments (Micro-Hubs in Northeast)
 * **Action:** Partner with regional 3PL logistics hubs in Salvador (BA) and Recife (PE) for high-velocity SKUs (e.g., Bed & Bath, Health & Beauty).
   - *Expected Impact:* Reduces average transit time from 20 days to <6 days for high-demand items, and cuts average customer freight costs by 30%.
+

@@ -55,3 +55,4 @@ with open(out_path, "w", encoding="utf-8") as f:
     json.dump(profile_results, f, indent=2)
 
 print(f"\nProfile successfully saved to {out_path}")
+

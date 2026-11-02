@@ -65,3 +65,4 @@ def render_kpi_cards(kpis: dict):
             value=f"R$ {kpis['total_gmv_brl']:,.2f}",
             help="Gross Merchandise Value including freight."
         )
+

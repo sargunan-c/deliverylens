@@ -81,3 +81,4 @@ res_ontime = con.execute(f"""
     WHERE order_status = 'delivered'
 """).df()
 print("\nDelivered Orders KPI Check:\n", res_ontime.to_string())
+

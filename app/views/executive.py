@@ -48,3 +48,4 @@ def render_executive_view(filters: dict):
             """, unsafe_allow_html=True)
         else:
             st.info("No delivered orders found in selection.")
+

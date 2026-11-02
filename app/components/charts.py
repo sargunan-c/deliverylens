@@ -173,3 +173,4 @@ def plot_seller_handoff_vs_delivery_late(df: pd.DataFrame) -> go.Figure:
         yaxis=dict(ticksuffix="%")
     )
     return fig
+

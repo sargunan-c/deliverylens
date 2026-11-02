@@ -20,3 +20,4 @@ JOIN raw_sellers s ON oi.seller_id = s.seller_id
 GROUP BY oi.seller_id, s.seller_city, s.seller_state, s.seller_macro_region
 HAVING COUNT(DISTINCT oi.order_id) >= 30 -- Statistically relevant sample
 ORDER BY late_delivery_rate_pct DESC;
+

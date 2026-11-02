@@ -101,3 +101,4 @@ This document establishes the official definitions, mathematical equations, edge
 * **Stage Decomposition:**
   - **Pre-Dispatch Cancellations:** Canceled when `order_delivered_carrier_date IS NULL` (inventory stockouts, merchant unresponsive).
   - **In-Transit Cancellations:** Canceled when `order_delivered_carrier_date IS NOT NULL` (package lost, damaged, severe transit delay).
+

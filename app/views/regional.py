@@ -70,3 +70,4 @@ def render_regional_view(filters: dict):
             height=580,
             hide_index=True
         )
+

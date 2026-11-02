@@ -80,3 +80,4 @@ Streamlit Interactive Dashboard (Executive, Regional, Seller, CX, Cancellations,
 * **SQL & Data Modeling:** Formulated dimensional models, analytical marts, window functions, and guarded against multi-table join fan-outs.
 * **Full-Stack Prototyping:** Built a production-grade Streamlit analytical application powered by DuckDB, with interactive Plotly visualizations and CSV export capabilities.
 * **Data-to-Action Translation:** Translated raw transactional numbers into concrete business actions with quantified impact estimates.
+

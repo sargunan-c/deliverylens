@@ -13,3 +13,4 @@ FROM fact_orders
 WHERE review_score IS NOT NULL AND is_delivered = 1
 GROUP BY review_score
 ORDER BY review_score ASC;
+

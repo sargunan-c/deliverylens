@@ -67,3 +67,4 @@ def render_cx_reviews_view(filters: dict):
             > **{row['review_score']}★** (Delivered **+{row['delay_days']:.0f} days late** in {row['customer_state']})  
             > *"{row['review_comment_message']}"*
             """)
+

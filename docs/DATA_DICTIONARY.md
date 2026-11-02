@@ -89,3 +89,4 @@ DeliveryLens models the Brazilian Olist E-commerce ecosystem. The operational da
 1. **Review Duplication (Fan-Out Pitfall):** 551 orders in Olist have more than one review entry. Joining `orders` directly to `reviews` produces 99,992 rows instead of 99,441, inflating order volumes and double-counting revenue. DeliveryLens deduplicates `raw_order_reviews` by keeping the latest review per order (`ROW_NUMBER() OVER (PARTITION BY order_id ORDER BY review_answer_timestamp DESC)`).
 2. **Missing Dates on Delivered Orders:** 8 orders marked `delivered` had null customer delivery timestamps. DeliveryLens excludes these 8 records from transit time and delay calculations to prevent silent division-by-zero or skewed distributions.
 3. **Item Aggregation Before Join:** Order items and payments are pre-aggregated at the `order_id` grain prior to joining with `fact_orders`.
+

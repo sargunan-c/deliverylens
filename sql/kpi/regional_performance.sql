@@ -14,3 +14,4 @@ SELECT
 FROM fact_orders
 GROUP BY customer_macro_region, customer_state
 ORDER BY late_delivery_rate_pct DESC;
+

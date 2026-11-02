@@ -11,3 +11,4 @@ SELECT
 FROM fact_orders
 GROUP BY customer_macro_region
 ORDER BY cancellation_rate_pct DESC;
+

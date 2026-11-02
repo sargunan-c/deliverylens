@@ -209,3 +209,4 @@ def get_drilldown_records(filters: Optional[Dict[str, Any]] = None, limit: int =
     LIMIT {limit};
     """
     return run_query(query)
+

@@ -13,3 +13,4 @@ SELECT
     ROUND(SUM(total_order_value), 2) AS total_gmv_brl,
     ROUND(AVG(total_freight_value), 2) AS avg_freight_per_order
 FROM fact_orders;
+
