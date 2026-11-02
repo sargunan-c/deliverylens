@@ -38,6 +38,8 @@ def render_kpi_cards(kpis: dict):
             help="Average customer review rating (1-5 stars)."
         )
 
+    st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
+
     c5, c6, c7, c8 = st.columns(4)
     with c5:
         st.metric(
