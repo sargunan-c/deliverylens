@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+env/
+venv/
+
+# DuckDB & SQLite
+*.duckdb
+*.duckdb.wal
+*.db
+*.sqlite3
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (Raw datasets should not be committed to Git due to size; documented download steps provided)
+data/raw/*.csv
+data/processed/*.duckdb
+data/processed/*.parquet
