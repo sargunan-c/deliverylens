@@ -25,3 +25,11 @@ data/raw/*.csv
 data/processed/*.duckdb
 data/processed/*.parquet
 
+# Temporary exports and caches
+*.tmp
+*.log
+exports/
+*filtered_orders*.csv
+.pytest_cache/
+
+

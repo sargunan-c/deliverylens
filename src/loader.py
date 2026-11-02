@@ -7,7 +7,7 @@ import os
 import sys
 import duckdb
 
-BASE_DIR = r"C:\Users\csarg\.gemini\antigravity\scratch\deliverylens".replace("\\", "/")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace("\\", "/")
 RAW_DIR = f"{BASE_DIR}/data/raw"
 DB_PATH = f"{BASE_DIR}/data/processed/deliverylens.duckdb"
 

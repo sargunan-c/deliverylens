@@ -93,6 +93,38 @@ Open your browser at `http://localhost:8501`.
 
 ---
 
+## 🌐 Deployment to Streamlit Community Cloud
+
+DeliveryLens can be deployed to **Streamlit Community Cloud** with zero infrastructure costs:
+
+1. **Push your code to GitHub:**
+   ```bash
+   git remote add origin https://github.com/<your-username>/deliverylens.git
+   git branch -M main
+   git push -u origin main
+   ```
+2. **Deploy on Streamlit Cloud:**
+   - Log into [share.streamlit.io](https://share.streamlit.io).
+   - Click **"New app"**, select your repository, branch `main`, and set the entrypoint path to:
+     ```text
+     app/main.py
+     ```
+3. **Data Ingestion on Cloud:**
+   - On first startup, if `data/raw/` CSV files are present or mounted, DeliveryLens automatically triggers DuckDB compilation seamlessly via its built-in pre-flight handler.
+   - If deploying without committing large CSVs, users are greeted with clear setup instructions and Kaggle source links.
+
+---
+
+## 📄 Dataset Attribution & Citation
+
+This project utilizes the public **Brazilian E-Commerce Public Dataset by Olist**:
+* **Source:** [Kaggle Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+* **Publisher:** Olist & André Sionek
+* **License:** CC BY-NC-SA 4.0
+* **Scope:** 99,441 real e-commerce orders placed between October 2016 and October 2018 across multiple marketplaces in Brazil.
+
+---
+
 ## 🧪 Analytical Rigor & Edge Case Handling
 
 1. **Review Fan-Out Prevention:** Deduplicated 551 multi-review orders using window functions (`ROW_NUMBER() OVER (PARTITION BY order_id ORDER BY review_answer_timestamp DESC)`) to prevent revenue inflation.

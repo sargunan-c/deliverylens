@@ -1,7 +1,9 @@
+import os
 import duckdb
 
-RAW_DIR = r"C:\Users\csarg\.gemini\antigravity\scratch\deliverylens\data\raw".replace("\\", "/")
-DB_PATH = r"C:\Users\csarg\.gemini\antigravity\scratch\deliverylens\data\processed\deliverylens.duckdb".replace("\\", "/")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace("\\", "/")
+RAW_DIR = f"{BASE_DIR}/data/raw"
+DB_PATH = f"{BASE_DIR}/data/processed/deliverylens.duckdb"
 
 con = duckdb.connect(DB_PATH, read_only=True)
 
@@ -32,3 +34,4 @@ for csv_file, tbl in files_and_tables:
     else:
         print(f"{csv_file:38} | {csv_rows:>10,d} | {tbl:24} | {'NOT INGESTED':>12} | UNINGESTED (Omitted by design)")
 con.close()
+
